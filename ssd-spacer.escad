@@ -1,0 +1,142 @@
+// This code is licensensed under:
+//
+// Creative Commons' CC0 (public domain)
+//
+// https://creativecommons.org/publicdomain/zero/1.0/
+//
+// Created by Andrew Engelbrecht 2016
+//
+// ssd-spacer.escad is an ImplicitCAD/OpenSCAD description
+// of a spacer to place between an SSD and the other side
+// of a server's 3.5" hard drive caddy.
+//
+
+height = 1;
+width = 2.5;
+length = 7;
+wallwidth = 0.25;
+floorheight = 0.15;
+wallcurveradius = height - floorheight;
+
+// this also makes room for screw heads and washers:
+screwdriverradius = 0.5;
+
+
+ssdscrewheight = 0.6;
+ssdscrewdistance1 = 1;
+ssdscrewdistance2 = 6.5;
+ssdscrewradius = 0.1;
+
+hdscrewheight = 0.6;
+hdscrewdistance1 = 2;
+hdscrewdistance2 = 5;
+hdscrewradius = 0.15;
+
+
+big = 100; // arbitrarily big number
+
+
+module main () {
+    difference () {
+
+        // outer shape: a box
+        linear_extrude (height = height) {
+            square (width, length);
+        }
+
+        // cut away center leaving curves along walls
+        translate (wallwidth - big / 2, wallwidth - big / 2, floorheight) {
+            intersection () {
+
+                translate (big / 2, 0, 0) {
+                    linear_extrude (height = big, r = wallcurveradius) {
+                        square (big, big);
+                    }
+                }
+
+                translate (0, big / 2, 0) {
+                    linear_extrude (height = big, r = wallcurveradius) {
+                        square (big, big);
+                    }
+                }
+
+                translate (width - big / 2 - wallwidth * 2, 0, 0) {
+                    linear_extrude (height = big, r = wallcurveradius) {
+                        square (big, big);
+                    }
+                }
+
+                translate (0, length - big / 2 - wallwidth * 2, 0) {
+                    linear_extrude (height = big, r = wallcurveradius) {
+                        square (big, big);
+                    }
+                }
+            }
+        }
+
+        // cut out center of floor
+        translate (1,1,-0.5) linear_extrude (height = height * 2) {
+            square (width - 2 * (wallwidth + wallcurveradius) , length - 2 * (wallwidth + wallcurveradius));
+        }
+
+        // ssd screw hole and and access
+        union () {
+
+            // ssd screw hole
+            translate (wallwidth * 2, ssdscrewdistance1, ssdscrewheight) {
+                rotate ([0,270,0]) {
+                    linear_extrude (big) {
+                        circle (ssdscrewradius);
+                    }
+                }
+            }
+
+            // space for ssd screw head and screw driver to enter through opposite wall
+            translate (wallwidth, ssdscrewdistance1, floorheight + screwdriverradius) {
+                rotate ([90,90,0]) {
+                    linear_extrude (big) {
+                        union () {
+                            circle (screwdriverradius);
+                            translate (-screwdriverradius) {
+                                square (screwdriverradius * 2, big);
+                            }
+                        }
+                    }
+                }
+            }
+
+        }
+
+        // hd screw hole and and washer space
+        union () {
+
+            // hd screw hole
+            translate (width - wallwidth * 2, hdscrewdistance1, hdscrewheight) {
+                rotate ([0,90,0]) {
+                    linear_extrude (big) {
+                        circle (hdscrewradius);
+                    }
+                }
+            }
+
+            // space for hd screw washer
+            translate (width - wallwidth, hdscrewdistance1, floorheight + screwdriverradius) {
+                rotate ([90,270,0]) {
+                    linear_extrude (width / 2) {
+                        union () {
+                            circle (screwdriverradius);
+                            translate (-screwdriverradius) {
+                                square (screwdriverradius * 2, big);
+                            }
+                        }
+                    }
+                }
+            }
+
+        }
+
+    }
+}
+
+main();
+
