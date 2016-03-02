@@ -124,7 +124,10 @@ module main () {
             for (distance = [ssdScrewDistance1, ssdScrewDistance2]) {
 
                 screwHole (ssdScrewRadius, wallWidth * 2, distance, ssdScrewHeight, 270);
-                washerSpace (screwdriverRadius, wallWidth, distance, floorHeight + screwdriverRadius, big, 90);
+                // room for screw head
+                washerSpace (screwdriverRadius, wallWidth, distance, screwdriverRadius, width / 2 - wallWidth, 90);
+                // room for screwdriver
+                washerSpace (screwdriverRadius, width / 2, distance, screwdriverRadius + floorHeight, big, 90);
             }
         }
 
