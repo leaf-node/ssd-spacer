@@ -47,6 +47,23 @@ module screwHole (radius, x, y, z, angle) {
     }
 }
 
+// creates space for screw head and washer,
+// can be used for screwdriver access
+module washerSpace (radius, x, y, z, length, angle) {
+    translate (x, y, z) {
+        rotate ([90, angle, 0]) {
+            linear_extrude (length) {
+                union () {
+                    circle (radius);
+                    translate (-radius) {
+                        square (radius * 2, big);
+                    }
+                }
+            }
+        }
+    }
+}
+
 module main () {
     difference () {
 
@@ -93,49 +110,22 @@ module main () {
         // ssd screw hole and and access
         union () {
 
-            // ssd screw hole
             screwHole (ssdscrewradius, wallwidth * 2, ssdscrewdistance1, ssdscrewheight, 270);
-
-            // space for ssd screw head and screw driver to enter through opposite wall
-            translate (wallwidth, ssdscrewdistance1, floorheight + screwdriverradius) {
-                rotate ([90,90,0]) {
-                    linear_extrude (big) {
-                        union () {
-                            circle (screwdriverradius);
-                            translate (-screwdriverradius) {
-                                square (screwdriverradius * 2, big);
-                            }
-                        }
-                    }
-                }
-            }
+            washerSpace (screwdriverradius, wallwidth, ssdscrewdistance1, floorheight + screwdriverradius, big, 90);
 
         }
 
         // hd screw hole and and washer space
         union () {
 
-            // hd screw hole
             screwHole (hdscrewradius, width - wallwidth * 2, hdscrewdistance1, hdscrewheight, 90);
-
-            // space for hd screw washer
-            translate (width - wallwidth, hdscrewdistance1, floorheight + screwdriverradius) {
-                rotate ([90,270,0]) {
-                    linear_extrude (width / 2) {
-                        union () {
-                            circle (screwdriverradius);
-                            translate (-screwdriverradius) {
-                                square (screwdriverradius * 2, big);
-                            }
-                        }
-                    }
-                }
-            }
+            washerSpace (screwdriverradius, width - wallwidth, hdscrewdistance1, floorheight + screwdriverradius, width / 2, 270);
 
         }
 
     }
 }
+
 
 main();
 
