@@ -36,6 +36,17 @@ hdscrewradius = 0.15;
 big = 100; // arbitrarily big number
 
 
+module screwHole (radius, x, y, z, angle) {
+
+    translate (x, y, z) {
+        rotate ([0,angle,0]) {
+            linear_extrude (big) {
+                circle (radius);
+            }
+        }
+    }
+}
+
 module main () {
     difference () {
 
@@ -83,13 +94,7 @@ module main () {
         union () {
 
             // ssd screw hole
-            translate (wallwidth * 2, ssdscrewdistance1, ssdscrewheight) {
-                rotate ([0,270,0]) {
-                    linear_extrude (big) {
-                        circle (ssdscrewradius);
-                    }
-                }
-            }
+            screwHole (ssdscrewradius, wallwidth * 2, ssdscrewdistance1, ssdscrewheight, 270);
 
             // space for ssd screw head and screw driver to enter through opposite wall
             translate (wallwidth, ssdscrewdistance1, floorheight + screwdriverradius) {
@@ -111,13 +116,7 @@ module main () {
         union () {
 
             // hd screw hole
-            translate (width - wallwidth * 2, hdscrewdistance1, hdscrewheight) {
-                rotate ([0,90,0]) {
-                    linear_extrude (big) {
-                        circle (hdscrewradius);
-                    }
-                }
-            }
+            screwHole (hdscrewradius, width - wallwidth * 2, hdscrewdistance1, hdscrewheight, 90);
 
             // space for hd screw washer
             translate (width - wallwidth, hdscrewdistance1, floorheight + screwdriverradius) {
