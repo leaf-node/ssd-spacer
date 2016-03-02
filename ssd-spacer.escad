@@ -76,7 +76,7 @@ module main () {
     difference () {
 
         // outer shape: a box
-        linear_extrude (height = height) {
+        linear_extrude (height) {
             square (width, length);
         }
 
@@ -112,7 +112,7 @@ module main () {
 
         // cut out center of floor
         translate (wallWidth + wallCurveRadius, wallWidth + wallCurveRadius, -big / 2) {
-            linear_extrude (height = big) {
+            linear_extrude (big) {
                 square (width - 2 * (wallWidth + wallCurveRadius) , length - 2 * (wallWidth + wallCurveRadius));
             }
         }
