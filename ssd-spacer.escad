@@ -131,7 +131,7 @@ module main () {
             for (distance = [hdScrewDistance1, hdScrewDistance2]) {
 
                 screwHole (hdScrewRadius, width - wallWidth * 2, distance, hdScrewHeight, 90);
-                washerSpace (screwdriverRadius, width - wallWidth, distance, floorHeight + screwdriverRadius, width / 2, 270);
+                washerSpace (screwdriverRadius, width - wallWidth, distance, floorHeight + screwdriverRadius, width / 2 - wallWidth, 270);
             }
         }
 
