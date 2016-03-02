@@ -23,7 +23,7 @@ height = 1.3;
 width = 10.16 - 6.985;
 length = 9.9;
 wallWidth = 0.25;
-floorHeight = 0.1;
+floorHeight = 0.2;
 wallCurveRadius = height - floorHeight;
 
 // this also makes room for screw heads and washers:
