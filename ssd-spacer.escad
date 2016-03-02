@@ -111,13 +111,6 @@ module main () {
             }
         }
 
-        // cut out center of floor
-        translate (wallWidth + wallCurveRadius, wallWidth + wallCurveRadius, -big / 2) {
-            linear_extrude (big) {
-                square (width - 2 * (wallWidth + wallCurveRadius) , length - 2 * (wallWidth + wallCurveRadius));
-            }
-        }
-
         // ssd screw holes and and access
         union () {
 
