@@ -24,7 +24,7 @@ screwdriverRadius = 0.5;
 
 ssdScrewHeight = 0.6;
 ssdScrewDistance1 = 1;
-ssdScrewDistance2 = 6.5;
+ssdScrewDistance2 = 6.25;
 ssdScrewRadius = 0.1;
 
 hdScrewHeight = 0.6;
@@ -113,6 +113,9 @@ module main () {
             screwHole (ssdScrewRadius, wallWidth * 2, ssdScrewDistance1, ssdScrewHeight, 270);
             washerSpace (screwdriverRadius, wallWidth, ssdScrewDistance1, floorHeight + screwdriverRadius, big, 90);
 
+            screwHole (ssdScrewRadius, wallWidth * 2, ssdScrewDistance2, ssdScrewHeight, 270);
+            washerSpace (screwdriverRadius, wallWidth, ssdScrewDistance2, floorHeight + screwdriverRadius, big, 90);
+
         }
 
         // hd screw hole and and washer space
@@ -120,6 +123,9 @@ module main () {
 
             screwHole (hdScrewRadius, width - wallWidth * 2, hdScrewDistance1, hdScrewHeight, 90);
             washerSpace (screwdriverRadius, width - wallWidth, hdScrewDistance1, floorHeight + screwdriverRadius, width / 2, 270);
+
+            screwHole (hdScrewRadius, width - wallWidth * 2, hdScrewDistance2, hdScrewHeight, 90);
+            washerSpace (screwdriverRadius, width - wallWidth, hdScrewDistance2, floorHeight + screwdriverRadius, width / 2, 270);
 
         }
 
