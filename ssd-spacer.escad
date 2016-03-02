@@ -115,7 +115,7 @@ module main () {
             square (width - 2 * (wallWidth + wallCurveRadius) , length - 2 * (wallWidth + wallCurveRadius));
         }
 
-        // ssd screw hole and and access
+        // ssd screw holes and and access
         union () {
 
             for (distance = [ssdScrewDistance1, ssdScrewDistance2]) {
@@ -125,7 +125,7 @@ module main () {
             }
         }
 
-        // hd screw hole and and washer space
+        // hd screw holes and and washer space
         union () {
 
             for (distance = [hdScrewDistance1, hdScrewDistance2]) {
