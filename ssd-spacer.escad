@@ -33,7 +33,7 @@ screwdriverRadius = 0.4;
 ssdScrewHeight = 0.3;
 ssdScrewDistance1 = 1.9;
 ssdScrewDistance2 = 9.0;
-ssdScrewRadius = 0.1; // smaller for grip
+ssdScrewRadius = 0.175;
 
 hdScrewHeight = 0.635;
 hdScrewDistance1 = 2.850;
