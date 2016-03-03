@@ -12,7 +12,8 @@ in the real world. Measurements may be incorrect at this stage.
 
 ## Use
 
-First you need to install ImplicitCAD or OpenSCAD. I recommend ImplicitCAD.
+First you need to install ImplicitCAD. This project uses features not available
+in OpenSCAD.
 
 To generate an `.stl` file:
 
