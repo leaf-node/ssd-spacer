@@ -117,7 +117,7 @@ module main () {
                 }
 
                 translate (0, length - big / 2 - wallWidth * 2, 0) {
-                    linear_extrude (height = big, r = wallCurveRadius) {
+                    linear_extrude (height = big) {
                         square (big, big);
                     }
                 }
