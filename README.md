@@ -1,9 +1,9 @@
 # ssd-spacer
 
+![ssd spacer viewed in blender](http://i.imgur.com/Twd0PCo.png)
+
 ssd-spacer is designed with ImplicitCAD. It describes a spacer to place between
 an SSD and the other side of a server's 3.5" hard drive bay caddy.
-
-![ssd spacer viewed in blender](http://i.imgur.com/Twd0PCo.png)
 
 ## Status
 
