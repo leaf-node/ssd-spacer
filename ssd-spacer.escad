@@ -12,32 +12,32 @@
 //
 
 
-height = 1.3;
-width = 10.16 - 6.985;
-length = 9.9;
-wallWidth = 0.25;
-floorHeight = 0.2;
+height = 13;
+width = 101.6 - 69.85;
+length = 99;
+wallWidth = 2.5;
+floorHeight = 2;
 wallCurveRadius = height - floorHeight;
 
 // this also makes room for screw heads and washers:
-screwdriverRadius = 0.4;
+screwdriverRadius = 4;
 
 
-ssdScrewHeight = 0.3;
-ssdScrewDistance1 = 1.9;
-ssdScrewDistance2 = 9.0;
-ssdScrewRadius = 0.175;
+ssdScrewHeight = 3;
+ssdScrewDistance1 = 19;
+ssdScrewDistance2 = 90;
+ssdScrewRadius = 1.75;
 
-hdScrewHeight = 0.635;
-hdScrewDistance1 = 2.850;
-hdScrewDistance2 = 7.0;
-hdScrewRadius = 0.1; // smaller for grip
+hdScrewHeight = 6.35;
+hdScrewDistance1 = 28.50;
+hdScrewDistance2 = 70;
+hdScrewRadius = 1; // smaller for grip
 
-sigmoidSteepness = -4.9;
-sigmoidCenterOffset = width / 2 - wallWidth - 0.5;
+sigmoidSteepness = -0.49;
+sigmoidCenterOffset = width / 2 - wallWidth - 5;
 sigmoidHeight = floorHeight;
 
-big = 100; // arbitrarily big number
+big = 1000; // arbitrarily big number
 
 
 module screwHole (radius, x, y, z, angle) {
