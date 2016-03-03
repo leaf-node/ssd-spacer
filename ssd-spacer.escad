@@ -10,13 +10,6 @@
 // of a spacer to place between an SSD and the other side
 // of a server's 3.5" hard drive caddy.
 //
-// The described object is only a prototype. Measurements
-// must be made and added to this file before it is
-// practically useful.
-//
-// to generate an .stl file:
-// $ extopenscad ssd-spacer.escad
-//
 
 
 height = 1.3;
