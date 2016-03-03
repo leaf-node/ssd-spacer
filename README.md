@@ -20,8 +20,8 @@ To generate the `.stl` file:
 
     $ make
 
-You may then use the `.stl` file with your favorite slicer and 3d printer. You
-may also view this file on your computer by importing it within blender.
+You may then use the `.stl` file with your favorite slicer and 3d printer, or
+import and view it within blender.
 
 ## Authors
 
