@@ -1,6 +1,6 @@
 # ssd-spacer
 
-![ssd spacer viewed in blender](https://i.imgur.com/vvqcrhL.png)
+![ssd spacer viewed in blender](https://i.imgur.com/Z8vgxzS.png)
 
 ssd-spacer is a CAD description of a spacer to place between an SSD and the
 other side of a server's 3.5" drive caddy. ssd-spacer is designed with
