@@ -17,7 +17,7 @@ in OpenSCAD.
 
 To generate an `.stl` file:
 
-    $ extopenscad ssd-spacer.escad
+    $ make
 
 You may then use the `.stl` file with your favorite slicer and 3d printer. You
 can also view this file on your computer by importing it within blender.
