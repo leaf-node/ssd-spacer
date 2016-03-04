@@ -24,8 +24,8 @@ screwdriverRadius = 4;
 
 
 ssdScrewHeight = 3;
-ssdScrewDistance1 = 19;
-ssdScrewDistance2 = 90;
+ssdScrewDistance1 = 14;
+ssdScrewDistance2 = 90.5;
 ssdScrewRadius = 1.75;
 
 hdScrewHeight = 6.35;
