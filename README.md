@@ -1,6 +1,6 @@
 # ssd-spacer
 
-![ssd spacer viewed in blender](https://i.imgur.com/Z8vgxzS.png)
+![ssd spacer viewed in blender](https://i.imgur.com/8EapfwT.png)
 
 ssd-spacer goes between an SSD and the side of a 3.5" server hard drive caddy.
 ssd-spacer is designed with ImplicitCAD.
