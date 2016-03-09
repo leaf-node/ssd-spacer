@@ -19,20 +19,19 @@ length = 99;
 wallWidth = 2.5;
 floorHeight = 2;
 
-// this also makes room for screw heads and washers:
-screwdriverRadius = 4;
-
 wallCurveRadius = height - floorHeight;
 
 ssdScrewHeight = 3;
 ssdScrewDistance1 = 14;
 ssdScrewDistance2 = 90.5;
 ssdScrewRadius = 1.75;
+ssdScrewdriverRadius = 4;
 
 hdScrewHeight = 6.35;
 hdScrewDistance1 = 28;
 hdScrewDistance2 = 69.5;
 hdScrewRadius = 1.35; // smaller for grip
+hdNutSpaceRadius = 4;
 
 sigmoidSteepness = -0.49;
 sigmoidCenterOffset = width / 2 - wallWidth - 5;
@@ -131,7 +130,7 @@ module main () {
 
                 screwHole (ssdScrewRadius, wallWidth * 2, distance, ssdScrewHeight, 270);
                 // curved space for screw head and screw driver
-                accessSpaceSigmoid (screwdriverRadius, wallWidth, distance, screwdriverRadius, width - wallWidth, 90);
+                accessSpaceSigmoid (ssdScrewdriverRadius, wallWidth, distance, ssdScrewdriverRadius, width - wallWidth, 90);
             }
         }
 
@@ -142,7 +141,7 @@ module main () {
 
                 screwHole (hdScrewRadius, width - wallWidth * 2, distance, hdScrewHeight, 90);
                 // linear space for optional nut
-                accessSpaceLinear (screwdriverRadius, width - wallWidth, distance, hdScrewHeight, width / 2 - wallWidth, 270);
+                accessSpaceLinear (hdNutSpaceRadius, width - wallWidth, distance, hdScrewHeight, width / 2 - wallWidth, 270);
             }
         }
 
