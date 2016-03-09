@@ -27,11 +27,11 @@ ssdScrewDistance2 = 90.5;
 ssdScrewRadius = 1.75;
 ssdScrewdriverRadius = 4;
 
-hdScrewHeight = 6.35;
-hdScrewDistance1 = 28;
-hdScrewDistance2 = 69.5;
-hdScrewRadius = 1.35; // smaller for grip
-hdNutSpaceRadius = 4;
+caddyScrewHeight = 6.35;
+caddyScrewDistance1 = 28;
+caddyScrewDistance2 = 69.5;
+caddyScrewRadius = 1.35; // smaller for grip
+caddyNutSpaceRadius = 4;
 
 sigmoidSteepness = -0.49;
 sigmoidCenterOffset = width / 2 - wallWidth - 5;
@@ -134,14 +134,14 @@ module main () {
             }
         }
 
-        // hd screw holes and and washer space
+        // caddy screw holes and and washer space
         union () {
 
-            for (distance = [hdScrewDistance1, hdScrewDistance2]) {
+            for (distance = [caddyScrewDistance1, caddyScrewDistance2]) {
 
-                screwHole (hdScrewRadius, width - wallWidth * 2, distance, hdScrewHeight, 90);
+                screwHole (caddyScrewRadius, width - wallWidth * 2, distance, caddyScrewHeight, 90);
                 // linear space for optional nut
-                accessSpaceLinear (hdNutSpaceRadius, width - wallWidth, distance, hdScrewHeight, width / 2 - wallWidth, 270);
+                accessSpaceLinear (caddyNutSpaceRadius, width - wallWidth, distance, caddyScrewHeight, width / 2 - wallWidth, 270);
             }
         }
 
