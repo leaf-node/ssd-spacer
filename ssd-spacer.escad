@@ -51,8 +51,8 @@ module screwHole (radius, x, y, z, angle) {
     }
 }
 
-// helper module for creating screw head, washer and/or screw driver access
-module washerSpaceHelper (radius, x, y, z, length, angle, translateFunction) {
+// helper module for creating screw head, nut, and/or screw driver access
+module accessSpaceHelper (radius, x, y, z, length, angle, translateFunction) {
 
     translate (x, y, z) {
         rotate ([90, angle, 0]) {
@@ -68,21 +68,20 @@ module washerSpaceHelper (radius, x, y, z, length, angle, translateFunction) {
     }
 }
 
-// creates space for screw head and washer,
-// can be used for screwdriver access
-module washerSpace (radius, x, y, z, length, angle) {
+// creates linearly extruded space for screw head and nut
+module accessSpaceLinear (radius, x, y, z, length, angle) {
 
     function dontTranslate (h) = [0, 0];
 
-    washerSpaceHelper(radius, x, y, z, length, angle, dontTranslate);
+    accessSpaceHelper(radius, x, y, z, length, angle, dontTranslate);
 }
 
 // creates curved screw head and screwdriver access space
-module washerSpaceSigmoid (radius, x, y, z, length, angle) {
+module accessSpaceSigmoid (radius, x, y, z, length, angle) {
 
     function sigmoidFunc (h) = [0, sigmoidHeight / (1 + exp (sigmoidSteepness * (h - sigmoidCenterOffset)))];
 
-    washerSpaceHelper(radius, x, y, z, length, angle, sigmoidFunc);
+    accessSpaceHelper(radius, x, y, z, length, angle, sigmoidFunc);
 }
 
 
@@ -131,7 +130,7 @@ module main () {
 
                 screwHole (ssdScrewRadius, wallWidth * 2, distance, ssdScrewHeight, 270);
                 // curved space for screw head and screw driver
-                washerSpaceSigmoid (screwdriverRadius, wallWidth, distance, screwdriverRadius, width - wallWidth, 90);
+                accessSpaceSigmoid (screwdriverRadius, wallWidth, distance, screwdriverRadius, width - wallWidth, 90);
             }
         }
 
@@ -141,7 +140,8 @@ module main () {
             for (distance = [hdScrewDistance1, hdScrewDistance2]) {
 
                 screwHole (hdScrewRadius, width - wallWidth * 2, distance, hdScrewHeight, 90);
-                washerSpace (screwdriverRadius, width - wallWidth, distance, hdScrewHeight, width / 2 - wallWidth, 270);
+                // linear space for optional nut
+                accessSpaceLinear (screwdriverRadius, width - wallWidth, distance, hdScrewHeight, width / 2 - wallWidth, 270);
             }
         }
 
