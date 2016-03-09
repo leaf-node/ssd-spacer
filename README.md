@@ -20,14 +20,14 @@ height to 0.25 mm, a Lulzbot Mini prints this object in about an hour.
 
 ### Parts Needed
 
-You will need one or two metal files, one capable of trimming the bottom edge
-and a round pointy one to fit inside of small screw holes.
+* You will need one or two metal files, one capable of trimming the bottom edge
+  and a round pointy one to fit inside of small screw holes.
 
-You need to install ImplicitCAD, or to download a pre-generated `.stl` file
-[from Thingiverse](http://www.thingiverse.com/thing:1388903/#files). This
-project uses features not available in OpenSCAD.
+* You need to install ImplicitCAD, or to download a pre-generated `.stl` file
+  [from Thingiverse](http://www.thingiverse.com/thing:1388903/#files). This
+  project uses features not available in OpenSCAD.
 
-You will need a 3d slicer program such as Cura or Slic3r and a 3d printer.
+* You will need a 3d slicer program such as Cura or Slic3r and a 3d printer.
 
 ### Compiling
 
