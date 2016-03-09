@@ -13,15 +13,16 @@
 
 
 height = 13;
-width = 101.6 - 69.85 - 0.5;
+width = 101.6 - 69.85 - 0.5; // -0.5 gives a little wiggle room
 length = 99;
+
 wallWidth = 2.5;
 floorHeight = 2;
-wallCurveRadius = height - floorHeight;
 
 // this also makes room for screw heads and washers:
 screwdriverRadius = 4;
 
+wallCurveRadius = height - floorHeight;
 
 ssdScrewHeight = 3;
 ssdScrewDistance1 = 14;
