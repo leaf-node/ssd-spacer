@@ -58,8 +58,8 @@ this until you slightly increase hole size. When the holes are a proper size
 it should still require considerable strength and a large-handled screw driver
 to screw them in for the first time.
 
-Do not make the holes too big, unless you wish to use a nut. Otherwise the
-screw threads will not grip the plastic well and may fall out.
+Do not make the holes too big unless you wish to use a nut. Otherwise the screw
+threads will not grip the plastic well and may fall out.
 
 * One way to increase the size of the screw holes is by carefully filing the
   plastic with a pointy metal file.
