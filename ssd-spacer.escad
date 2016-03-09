@@ -13,7 +13,7 @@
 
 
 height = 13;
-width = 101.6 - 69.85;
+width = 101.6 - 69.85 - 0.5;
 length = 99;
 wallWidth = 2.5;
 floorHeight = 2;
@@ -29,9 +29,9 @@ ssdScrewDistance2 = 90.5;
 ssdScrewRadius = 1.75;
 
 hdScrewHeight = 6.35;
-hdScrewDistance1 = 28.50;
-hdScrewDistance2 = 70;
-hdScrewRadius = 1; // smaller for grip
+hdScrewDistance1 = 28;
+hdScrewDistance2 = 69.5;
+hdScrewRadius = 1.35; // smaller for grip
 
 sigmoidSteepness = -0.49;
 sigmoidCenterOffset = width / 2 - wallWidth - 5;
