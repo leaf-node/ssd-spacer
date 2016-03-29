@@ -2,8 +2,16 @@
 
 ![ssd spacer viewed in blender](https://i.imgur.com/8EapfwT.png)
 
-ssd-spacer goes between an SSD and the side of a 3.5" server drive caddy.
+ssd-spacer goes between an SSD and the side of a 3.5" server drive caddy. The
+advantage of this design is that it does not place a 1 or 2 mm layer of plastic
+under or next to the SSD. This allows the SATA connector to remain aligned in
+the bottom right hand corner of the drive bay.
+
 ssd-spacer is designed with ImplicitCAD.
+
+## Source Code
+
+* [git repository](https://gitlab.com/sudoman/ssd-spacer)
 
 ## Status
 
