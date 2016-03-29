@@ -22,7 +22,7 @@ may be necessary.
 ### Print Time
 
 When using the Lulzbot's recommended profile for Cura, which sets the layer
-height to 0.25 mm, a Lulzbot Mini prints this object in about an hour.
+height to 0.25 mm, a Lulzbot Mini printed this object in about an hour.
 
 ## Use
 
