@@ -11,7 +11,7 @@ ssd-spacer is designed with ImplicitCAD.
 
 ## Source Code
 
-* [git repository](https://gitlab.com/sudoman/ssd-spacer)
+[git repository](https://github.com/leaf-node/ssd-spacer)
 
 ## Status
 
